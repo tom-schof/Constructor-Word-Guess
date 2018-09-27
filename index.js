@@ -2,9 +2,13 @@ var Word = require("./Word.js");
 var Inquirer = require("inquirer");
 
 var remGuesses = 5;
-var words = ["amphisbaena"]
+var words = ["amphisbaena", "investigation", "administration", "preoccupation", "entertainment","comprehensive",
+ "responsibility", "representative", "strikebreaker", "correspondence", "identification", "revolutionary", 
+ "short circuit", "superintendent", "communication", "qualification"];
 
+var currentWord = words[Math.floor(Math.random()*words.length)];
 
+var currentWordObject = new Word(currentWord);
 
 inquirer.prompt([{
     type: "input",
@@ -12,6 +16,6 @@ inquirer.prompt([{
     message: "Please guess a letter: "
 }, ]).then(function (data) {
 
-    bandsintownAPI(concertData);
+    currentWordObject(data.letterGuess);
 
 })

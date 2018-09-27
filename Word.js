@@ -6,15 +6,23 @@ function Word(word){
     for (var i = 0; i < word.length; i++){
         var letter = new Letter(word[i]);
         letter.updateDisplay();
-        letterArray.push(letter);
+        this.letterArray.push(letter);
     }
     
    
 
 }
 
-Word.prototype.guessLetter = function(guess){
+Word.prototype.toString = function(){
+    this.wordDisplay = [];
     for (var j = 0; j < this.letterArray.length; j++){
-        this.letterArray[j].checkGuess(guess);
+        this.wordDisplay.push(this.letterArray[j].updateDisplay());  
     }
+    console.log(this.wordDisplay.join(" "));
 }
+
+
+module.exports = Word;
+
+
+

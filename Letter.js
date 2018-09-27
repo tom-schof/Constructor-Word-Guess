@@ -6,9 +6,9 @@ function Letter(letter) {
 
 Letter.prototype.updateDisplay = function (){
     if (this.guessed == true) {
-        console.log(this.letter);
+        return this.letter;
     } else {
-        console.log("_");
+         return "_";
     }
 }
 
@@ -16,6 +16,8 @@ Letter.prototype.checkGuess = function (guess) {
     if (guess === this.letter) {
         this.guessed = true;
     }
-    updateDisplay();
+    this.updateDisplay();
 };
+
+module.exports = Letter;
 
