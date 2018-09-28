@@ -5,7 +5,6 @@ function Word(word){
     this.letterArray = [];
     for (var i = 0; i < word.length; i++){
         var letter = new Letter(word[i]);
-        letter.updateDisplay();
         this.letterArray.push(letter);
     }
     
@@ -13,14 +12,16 @@ function Word(word){
 
 }
 
-Word.prototype.toString = function(){
-    this.wordDisplay = [];
+Word.prototype.letterArrayString = function(){
+    this.wordDisplay = "";
     for (var j = 0; j < this.letterArray.length; j++){
-        this.wordDisplay.push(this.letterArray[j].updateDisplay());  
+        this.wordDisplay += this.letterArray[j].toString() + " ";  
     }
-    console.log(this.wordDisplay.join(" "));
+    console.log(this.wordDisplay);
 }
 
+var example = new Word("example");
+example.letterArrayString();
 
 module.exports = Word;
 

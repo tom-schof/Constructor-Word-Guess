@@ -4,7 +4,7 @@ function Letter(letter) {
 }
 
 
-Letter.prototype.updateDisplay = function (){
+Letter.prototype.toString = function (){
     if (this.guessed == true) {
         return this.letter;
     } else {
@@ -16,7 +16,7 @@ Letter.prototype.checkGuess = function (guess) {
     if (guess === this.letter) {
         this.guessed = true;
     }
-    this.updateDisplay();
+    this.toString();
 };
 
 module.exports = Letter;
