@@ -20,8 +20,28 @@ Word.prototype.letterArrayString = function(){
     console.log(this.wordDisplay);
 }
 
-var example = new Word("example");
-example.letterArrayString();
+Word.prototype.checkCharacter = function(character){
+    var truth = false;
+    for (var k = 0; k < this.letterArray.length; k++){
+    if (this.letterArray[k].checkGuess(character)){
+        truth = true;
+    };
+    
+    }
+
+    this.letterArrayString();
+    return truth;
+}
+
+
+
+// var example = new Word("example");
+// example.letterArrayString();
+
+// example.checkCharacter("x");
+// example.checkCharacter("a");
+// example.checkCharacter("e");
+
 
 module.exports = Word;
 

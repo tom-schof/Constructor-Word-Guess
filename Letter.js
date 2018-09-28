@@ -17,6 +17,8 @@ Letter.prototype.checkGuess = function (guess) {
         this.guessed = true;
     }
     this.toString();
+
+    return this.guessed;
 };
 
 module.exports = Letter;
